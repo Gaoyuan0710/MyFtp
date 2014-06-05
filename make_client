@@ -1,0 +1,9 @@
+client:client.o common.o my_client.o
+	gcc client.o common.o my_client.o -o client
+	rm *.o
+client.o:client.c client.h
+	gcc -c client.c
+common.o:common.c client.h
+	gcc -c common.c
+my_client.o:my_client.c client.h
+	gcc -c my_client.c

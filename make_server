@@ -1,0 +1,10 @@
+server:server.o common.o my_server.o
+	gcc server.o common.o my_server.o -o server
+	rm *.o
+server.o:server.c server.h
+	gcc -c server.c
+common.o:common.c server.h
+	gcc -c common.c
+my_server.o:my_server.c server.h
+	gcc -c my_server.c
+
